@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Font For This Site</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0 auto; max-width: 42rem; padding: 1.5rem 1.25rem 3rem; font: 16px/1.5 system-ui, sans-serif; color: #14232b; background: #fff; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 0.25rem; }
+  h2 { font-size: 1.15rem; margin: 1.6rem 0 0.4rem; }
+  p, li { margin: 0.4rem 0; }
+  ul { padding-left: 1.2rem; }
+  .meta { color: #355; margin-bottom: 1rem; }
+  a { color: #1d4e89; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy — Font For This Site</h1>
+<p class="meta">Last updated: 2026-10-19</p>
+<p>Font For This Site changes the font family on websites you turn on. It does not collect, transmit, sell, or share personal data. There is no account, no analytics, and no advertising.</p>
+<p>Contact: <a href="mailto:ppo.viktorov.aa@gmail.com">ppo.viktorov.aa@gmail.com</a></p>
+
+<h2>What is stored</h2>
+<p>The only stored data is the font rule you save. It stays in this browser, in the extension's local storage (<code>chrome.storage.local</code>). A rule is the site origin (scheme, host, and port), the font name you entered, whether the rule is on, and the time of the last change.</p>
+<p>Rules are not synced to other devices and are not sent to a server. The extension does not use <code>chrome.storage.sync</code>.</p>
+
+<h2>What is read and then discarded</h2>
+<ul>
+  <li>When you open the popup, the extension reads the address of that tab so it can show the site. It does not read other tabs.</li>
+  <li>On an http or https page it also checks the document type, only to see whether the page is a PDF. It does not read the page text.</li>
+  <li>It reads the names of fonts installed on the computer to fill the suggestions in the popup. That list is not stored.</li>
+  <li>On a page where a rule is on, it reads the font family already used by elements, including inline font settings, so code, monospace text, and common icon fonts can be left alone, and so an inline value it replaced can be put back.</li>
+</ul>
+<p>None of these reads are stored or sent anywhere.</p>
+
+<h2>Sites and permissions</h2>
+<p>At install, the extension is not given access to websites. When you press Apply or turn a site on, Chrome asks for that host only. The pattern Chrome grants covers every port on that host, because a Chrome host pattern cannot name a port. The font is still applied only to origins you turned on.</p>
+<p>The extension cannot change <code>chrome://</code> pages, PDF documents, or the Chrome Web Store. It asks for nothing from those pages and does not save a rule from them.</p>
+
+<h2>Incognito</h2>
+<p>If you allow the extension in incognito, Chrome runs it in spanning mode. The same on-device rules apply. The extension cannot tell an incognito tab from a normal tab and does not keep a list of which tabs were incognito.</p>
+
+<h2>Remote code</h2>
+<p>All code is in the extension package. The extension does not download or run code from the network, and it does not load remote fonts, scripts, or styles for itself.</p>
+
+<h2>Deleting data</h2>
+<p>Reset site deletes that site's rule and removes the host permission when no other enabled site still needs the same host. Turning the switch off keeps the rule disabled and leaves the host permission in place. Uninstalling the extension deletes the remaining rules and permissions.</p>
+
+<h2>Children</h2>
+<p>The extension is not directed at children and does not ask for age or any other profile.</p>
+
+<h2 lang="ru">Кратко по-русски</h2>
+<div lang="ru">
+<p>Font For This Site меняет только семейство шрифта на тех сайтах http и https, которые вы включили. Персональные данные не собираются, не передаются и не продаются. Аккаунта, аналитики и рекламы нет.</p>
+<p>На устройстве хранится только правило: источник (схема, хост и порт), имя шрифта, включено или нет, время изменения. Оно лежит в локальном хранилище расширения и на другие устройства не копируется.</p>
+<p>При открытии окна читается адрес этой вкладки и, для страницы http(s), тип документа — чтобы не трогать PDF. Текст страницы не читается. Список установленных шрифтов нужен только для подсказок и не сохраняется. На включённом сайте читается font-family элементов, чтобы не менять код, моноширинный текст и значки и чтобы вернуть подменённое встроенное значение. Эти чтения никуда не отправляются.</p>
+<p>Доступ к сайтам при установке не выдаётся. Chrome спрашивает его для одного хоста, когда вы нажимаете Apply. Страницы chrome://, PDF и Chrome Web Store не меняются. В режиме инкогнито, если расширение там разрешено, действуют те же локальные правила; отдельный журнал инкогнито не ведётся.</p>
+<p>Код расширения не загружается из сети. «Reset site» удаляет правило сайта и снимает доступ к хосту, если он больше не нужен. Удаление расширения стирает остальные правила.</p>
+</div>
+</body>
+</html>
