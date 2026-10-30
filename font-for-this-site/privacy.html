@@ -17,13 +17,19 @@
 </head>
 <body>
 <h1>Privacy Policy — Font For This Site</h1>
-<p class="meta">Last updated: 2026-10-19</p>
-<p>Font For This Site changes the font family on websites you turn on. It does not collect, transmit, sell, or share personal data. There is no account, no analytics, and no advertising.</p>
+<p class="meta">Last updated: 2026-10-30 (version 0.1.3)</p>
+<p>Font For This Site changes the font family, and optionally the text size and line spacing, on websites you turn on. It does not collect, transmit, sell, or share personal data. There is no account, no analytics, and no advertising.</p>
 <p>Contact: <a href="mailto:ppo.viktorov.aa@gmail.com">ppo.viktorov.aa@gmail.com</a></p>
 
 <h2>What is stored</h2>
-<p>The only stored data is the font rule you save. It stays in this browser, in the extension's local storage (<code>chrome.storage.local</code>). A rule is the site origin (scheme, host, and port), the font name you entered, whether the rule is on, and the time of the last change.</p>
-<p>Rules are not synced to other devices and are not sent to a server. The extension does not use <code>chrome.storage.sync</code>.</p>
+<p>Everything the extension stores stays in this browser, in the extension's local storage (<code>chrome.storage.local</code>):</p>
+<ul>
+  <li><strong>Site rules.</strong> A rule is the site origin (scheme, host, and port), the font name you entered, the text size and line spacing if you set them for that site, whether the rule is on, and the time of the last change.</li>
+  <li><strong>Pending per-site choices.</strong> When Chrome asks you for access to a site, the popup can close. The font you picked for that site is kept as a pending choice (origin, font name, host pattern, time) until you allow or deny access, and it expires after a short time. It is deleted when it is applied, denied, or expired.</li>
+  <li><strong>Recent fonts.</strong> A short list (up to 8) of font names you used recently, shown only as suggestions in the font field. It contains font names only, no sites.</li>
+  <li><strong>Settings.</strong> Your light or dark theme choice.</li>
+</ul>
+<p>None of this is synced to other devices or sent to a server. The extension does not use <code>chrome.storage.sync</code>.</p>
 
 <h2>What is read and then discarded</h2>
 <ul>
@@ -35,7 +41,7 @@
 <p>None of these reads are stored or sent anywhere.</p>
 
 <h2>Sites and permissions</h2>
-<p>At install, the extension is not given access to websites. When you press Apply or turn a site on, Chrome asks for that host only. The pattern Chrome grants covers every port on that host, because a Chrome host pattern cannot name a port. The font is still applied only to origins you turned on.</p>
+<p>At install, the extension is not given access to websites. When you pick a font for a site, or turn a site back on in the All sites page, Chrome asks for that host only. The pattern Chrome grants covers every port on that host, because a Chrome host pattern cannot name a port. The font is still applied only to origins you turned on.</p>
 <p>The extension cannot change <code>chrome://</code> pages, PDF documents, or the Chrome Web Store. It asks for nothing from those pages and does not save a rule from them.</p>
 
 <h2>Incognito</h2>
@@ -45,18 +51,18 @@
 <p>All code is in the extension package. The extension does not download or run code from the network, and it does not load remote fonts, scripts, or styles for itself.</p>
 
 <h2>Deleting data</h2>
-<p>Reset site deletes that site's rule and removes the host permission when no other enabled site still needs the same host. Turning the switch off keeps the rule disabled and leaves the host permission in place. Uninstalling the extension deletes the remaining rules and permissions.</p>
+<p>Reset site, or Delete in the All sites page, deletes that site's rule and pending choice and removes the host permission when no other enabled site still needs the same host. Turning a site off in the All sites page keeps the rule disabled and leaves the host permission in place. Uninstalling the extension deletes all stored data and permissions.</p>
 
 <h2>Children</h2>
 <p>The extension is not directed at children and does not ask for age or any other profile.</p>
 
 <h2 lang="ru">Кратко по-русски</h2>
 <div lang="ru">
-<p>Font For This Site меняет только семейство шрифта на тех сайтах http и https, которые вы включили. Персональные данные не собираются, не передаются и не продаются. Аккаунта, аналитики и рекламы нет.</p>
-<p>На устройстве хранится только правило: источник (схема, хост и порт), имя шрифта, включено или нет, время изменения. Оно лежит в локальном хранилище расширения и на другие устройства не копируется.</p>
+<p>Font For This Site меняет семейство шрифта (и, если вы задали, размер текста и межстрочный интервал) только на тех сайтах http и https, которые вы включили. Персональные данные не собираются, не передаются и не продаются. Аккаунта, аналитики и рекламы нет.</p>
+<p>Всё хранится только в локальном хранилище расширения (chrome.storage.local) и никуда не отправляется и не синхронизируется: правила сайтов (источник — схема, хост и порт; имя шрифта; размер текста и межстрочный интервал, если заданы; включено или нет; время изменения), отложенный выбор шрифта для сайта на время запроса доступа Chrome (удаляется после применения, отказа или истечения срока), короткий список недавних шрифтов (только имена, до 8) для подсказок и выбранная тема.</p>
 <p>При открытии окна читается адрес этой вкладки и, для страницы http(s), тип документа — чтобы не трогать PDF. Текст страницы не читается. Список установленных шрифтов нужен только для подсказок и не сохраняется. На включённом сайте читается font-family элементов, чтобы не менять код, моноширинный текст и значки и чтобы вернуть подменённое встроенное значение. Эти чтения никуда не отправляются.</p>
-<p>Доступ к сайтам при установке не выдаётся. Chrome спрашивает его для одного хоста, когда вы нажимаете Apply. Страницы chrome://, PDF и Chrome Web Store не меняются. В режиме инкогнито, если расширение там разрешено, действуют те же локальные правила; отдельный журнал инкогнито не ведётся.</p>
-<p>Код расширения не загружается из сети. «Reset site» удаляет правило сайта и снимает доступ к хосту, если он больше не нужен. Удаление расширения стирает остальные правила.</p>
+<p>Доступ к сайтам при установке не выдаётся. Chrome спрашивает его для одного хоста, когда вы выбираете шрифт для сайта. Страницы chrome://, PDF и Chrome Web Store не меняются. В режиме инкогнито, если расширение там разрешено, действуют те же локальные правила; отдельный журнал инкогнито не ведётся.</p>
+<p>Код расширения не загружается из сети. «Сбросить сайт» или «Удалить» на странице «Все сайты» удаляет правило сайта и снимает доступ к хосту, если он больше не нужен. Удаление расширения стирает все сохранённые данные.</p>
 </div>
 </body>
 </html>
