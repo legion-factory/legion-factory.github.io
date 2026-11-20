@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy — Save Tabs - Session Saver</title>
+  <meta name="description" content="Privacy policy for the Save Tabs - Session Saver Chrome extension, version 1.0.0. Sessions and snapshots stay on the device.">
+  <style>
+    :root {
+      color-scheme: light;
+      --text: #1a1a1a;
+      --muted: #4a4f57;
+      --line: #d5d8de;
+      --bg: #ffffff;
+      --band: #f4f6f8;
+      --accent: #1d4e89;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    a:focus-visible, :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    header, main { max-width: 42rem; margin: 0 auto; padding: 1.25rem 1.25rem 0; }
+    header { padding-top: 2rem; }
+    .kicker, .updated { margin: 0; color: var(--muted); }
+    h1 { margin: 0.35rem 0 0.5rem; font-size: 1.8rem; line-height: 1.2; font-weight: 650; }
+    nav { display: flex; gap: 1rem; margin: 1rem 0 0; }
+    nav a { font-weight: 650; }
+    article { padding: 1.5rem 0 2rem; border-top: 1px solid var(--line); }
+    h2 { margin: 1.6rem 0 0.5rem; font-size: 1.25rem; line-height: 1.3; }
+    p, ul { margin: 0.6rem 0; }
+    ul { padding-left: 1.25rem; }
+    li + li { margin-top: 0.35rem; }
+    code {
+      font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", monospace;
+      font-size: 0.92em;
+    }
+    footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 0 1.25rem 2.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --text: #f2f3f5;
+        --muted: #c2c7d0;
+        --line: #3a3f48;
+        --bg: #14161a;
+        --band: #1d2128;
+        --accent: #9dc1f0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">Privacy policy · version 1.0.0</p>
+    <h1>Save Tabs - Session Saver</h1>
+    <p class="updated">Last updated 21 November 2026</p>
+    <nav aria-label="Languages">
+      <a href="#english">English</a>
+      <a href="#russian" lang="ru">Русский</a>
+    </nav>
+  </header>
+  <main>
+    <article id="english" lang="en">
+      <h2>English</h2>
+      <p>Save Tabs - Session Saver is a Chrome extension by Legion Labs that saves and restores the tabs in the current window on your device. This policy describes exactly what version 1.0.0 of the extension does with data. Earlier development builds used the name Named Window Tabs; this policy applies to the same extension.</p>
+      <p>The extension has no account system. A short public page for this policy is published at <a href="https://legion-factory.github.io/save-tabs/privacy.html">https://legion-factory.github.io/save-tabs/privacy.html</a>.</p>
+
+      <h2>Data the extension handles</h2>
+      <p>When you save a named session, when you keep a snapshot as a named session, or when an automatic snapshot is taken, the extension reads the tabs in <strong>that window only</strong> and stores:</p>
+      <ul>
+        <li>a random session or snapshot id created on this device (this is not an account id or a user id)</li>
+        <li>for a named session, the session name you enter, at most 200 characters, with invisible and bidirectional-override characters removed</li>
+        <li>each tab’s URL as the browser reports it, or the tab’s pending URL if the address has not loaded yet</li>
+        <li>each tab’s title, at most 300 characters, with the same invisible characters removed; an empty title is stored as “Untitled”</li>
+        <li>whether the tab is pinned</li>
+        <li>the tab’s position in the window</li>
+        <li>if the tab belongs to a tab group, a local group id, and that group’s name, color, and collapsed state</li>
+        <li>optionally the window’s position and size, so a restore can reopen a window</li>
+        <li>the time the session or snapshot was saved</li>
+      </ul>
+      <p>Automatic snapshots are taken when a window closes and about every five minutes. The extension keeps the latest five automatic snapshots. Keeping a snapshot copies it into a named session; the snapshot itself stays in the automatic list until it is replaced. Named sessions are not part of that five.</p>
+      <p>A short local recovery flag may be stored if Chrome did not close cleanly, so the popup can offer to restore the latest snapshot. Theme, language, and whether the Chrome Web Store rating prompt is postponed or dismissed are also stored on the device.</p>
+      <p>The extension does not read Chrome’s browsing history and does not store a separate visit time for each page. It does not read page text, cookies, passwords, form fields, or site icons.</p>
+      <p>Addresses that use the schemes <code>javascript:</code>, <code>data:</code>, <code>vbscript:</code>, and <code>blob:</code> are discarded and are not stored. That includes an address that becomes one of those schemes only after tab, carriage-return, and line-feed characters are removed. An address longer than 32,768 characters is not stored. A tab with no address is stored with an empty address and is not reopened. Other addresses in the window, including browser-internal pages, are stored. When you restore a session, the extension reopens <code>http</code>, <code>https</code>, and <code>file</code> addresses, a saved New Tab page, and <code>about:blank</code>. Any other stored address stays in the session and is not opened. Pages such as <code>chrome://</code> are remembered but cannot be reopened.</p>
+      <p>A URL or title can still contain personal information, including a page you were signed into and a token a site put in the address. The extension keeps that URL string. It does not take the token out of the URL, and it does not send the URL anywhere.</p>
+      <p>If a stored session contains a blocked address, that tab is removed from the stored session. If every address in a stored session is blocked, that session is removed. Two stored sessions that share one id are kept as one session.</p>
+      <p>A new save or import is refused when that new session would hold more than 2000 tabs, or when it does not fit in local storage. There is no fixed cap on the number of named sessions. A session that is already stored with more than 2000 tabs is kept as it is. The extension does not delete stored sessions to make room.</p>
+      <p>You can export a JSON backup of sessions and snapshots and import that file back. You can also import a OneTab list or a Session Buddy JSON backup. Import reads only the file you choose. It merges new sessions and skips duplicates and invalid entries. Nothing is uploaded.</p>
+
+      <h2>Where data lives</h2>
+      <p>Sessions, snapshots, and the settings above are stored in <code>chrome.storage.local</code> in your Chrome profile. The extension does not use <code>chrome.storage.sync</code>. This data is not sent to the developer or to any other server. The extension does not include analytics, ads, or crash reporting, and its own code does not make network requests.</p>
+      <p>Restoring a session asks Chrome to open the saved addresses as ordinary tabs. Chrome then loads those pages in the usual way. That is the browser opening a page you asked to reopen, not the extension uploading the session.</p>
+      <p>Export writes a JSON file on your computer only when you click Export. Import reads a JSON file only when you choose one. Neither action uploads the file. If you later send that file yourself, that happens outside the extension.</p>
+
+      <h2>Incognito</h2>
+      <p>The extension does not run in incognito until you allow it on <code>chrome://extensions</code>. When you allow it, incognito uses a separate store (<code>incognito: "split"</code>). A session or snapshot saved in an incognito window stays in that incognito session and is not copied into your regular profile. Chrome deletes that store when the incognito session ends.</p>
+
+      <h2>Permissions</h2>
+      <ul>
+        <li><strong>tabs</strong> — read the URL, pending URL, title, pinned state, position, and tab-group membership of tabs in the window you save or that is snapshotted automatically, and reopen those tabs on Restore. The extension reads those tabs in the current window when you save, when an automatic snapshot is taken, and when it restores a session. It does not inject scripts into pages and does not use the history, cookies, or scripting APIs.</li>
+        <li><strong>storage</strong> — keep sessions, snapshots, and settings in <code>chrome.storage.local</code> on the device. Sync storage is not used.</li>
+        <li><strong>unlimitedStorage</strong> — so the on-device library is not cut at 10 MB.</li>
+        <li><strong>alarms</strong> — the five-minute window snapshot.</li>
+        <li><strong>tabGroups</strong> — save and restore a tab group’s name, color, collapsed state, and membership.</li>
+      </ul>
+      <p>The extension does not request host permissions or permission to run remote code. There is no content script. It does not request <code>sessions</code>, <code>history</code>, or <code>downloads</code>.</p>
+
+      <h2>How long data is kept</h2>
+      <p>Named sessions stay until you delete them in the popup, or until you remove the extension. Automatic snapshots stay until they are replaced by newer snapshots (the latest five are kept) or until you remove the extension. Chrome deletes the extension’s local storage on uninstall. Incognito sessions and snapshots end with the incognito session.</p>
+      <p>If a save or import does not fit in local storage, the extension leaves the sessions already stored in place and shows an error. It does not apply a 10 MB cap of its own.</p>
+
+      <h2>Sharing</h2>
+      <p>The developer does not sell this data, does not transfer it to third parties, and does not use it for advertising, creditworthiness, lending, or any purpose other than saving, renaming, deleting, restoring, exporting, and importing your tab sessions, and keeping automatic snapshots of the current window. There is no server to share it with. The developer does not read the stored sessions.</p>
+
+      <h2>Limited use</h2>
+      <p>The use of information received from Google APIs will adhere to the <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">Chrome Web Store User Data Policy</a>, including the Limited Use requirements.</p>
+
+      <h2>Contact</h2>
+      <p>Contact Legion Labs at <a href="mailto:ppo.viktorov.aa@gmail.com">ppo.viktorov.aa@gmail.com</a> or via <a href="https://legion-factory.github.io/">https://legion-factory.github.io/</a>.</p>
+    </article>
+
+    <article id="russian" lang="ru">
+      <h2>Русский</h2>
+      <p>Save Tabs - Session Saver (Сохранить вкладки - менеджер сессий) — расширение Chrome от Legion Labs, которое сохраняет и восстанавливает вкладки текущего окна на вашем устройстве. Текст описывает, что версия 1.0.0 делает с данными. В ранних сборках расширение называлось Named Window Tabs; эта политика относится к тому же расширению.</p>
+      <p>Системы аккаунтов нет. Публичная страница этой политики: <a href="https://legion-factory.github.io/save-tabs/privacy.html">https://legion-factory.github.io/save-tabs/privacy.html</a>.</p>
+
+      <h2>Какие данные обрабатываются</h2>
+      <p>Когда вы сохраняете именованную сессию, оставляете снимок как именованную сессию или когда делается автоматический снимок, расширение читает вкладки <strong>только этого окна</strong> и записывает:</p>
+      <ul>
+        <li>случайный идентификатор сессии или снимка, созданный на этом устройстве (это не идентификатор аккаунта и не идентификатор пользователя)</li>
+        <li>для именованной сессии — имя, не длиннее 200 символов, без невидимых символов и символов смены направления текста</li>
+        <li>URL каждой вкладки в том виде, в каком его сообщает браузер, либо pending URL, если адрес ещё не загрузился</li>
+        <li>заголовок вкладки, не длиннее 300 символов, без тех же невидимых символов; пустой заголовок записывается как «Untitled»</li>
+        <li>признак закрепления</li>
+        <li>позицию вкладки в окне</li>
+        <li>если вкладка входит в группу — локальный идентификатор группы, её имя, цвет и свёрнутость</li>
+        <li>при наличии — положение и размер окна, чтобы восстановление могло открыть окно</li>
+        <li>время сохранения сессии или снимка</li>
+      </ul>
+      <p>Автоматические снимки делаются при закрытии окна и примерно каждые пять минут. Хранятся пять последних автоматических снимков. «Оставить» копирует снимок в именованную сессию; сам снимок остаётся в автоматическом списке, пока его не вытеснит более новый. Именованные сессии в эти пять не входят.</p>
+      <p>Может храниться короткий локальный флаг восстановления, если Chrome закрылся некорректно, чтобы окно расширения предложило восстановить последний снимок. Тема, язык и решение отложить или скрыть предложение оценить расширение в магазине тоже хранятся на устройстве.</p>
+      <p>Историю прежних посещений Chrome расширение не читает и отдельное время визита для каждой страницы не хранит. Текст страницы, cookie, пароли, поля форм и значки сайтов оно не читает.</p>
+      <p>Адреса со схемами <code>javascript:</code>, <code>data:</code>, <code>vbscript:</code> и <code>blob:</code> отбрасываются и не сохраняются. Это касается и адреса, который становится одной из этих схем только после удаления символов табуляции и перевода строки. Адрес длиннее 32&nbsp;768 символов не сохраняется. Вкладка без адреса записывается с пустым адресом и не открывается снова. Остальные адреса в окне, включая служебные страницы браузера, сохраняются. При восстановлении расширение открывает адреса <code>http</code>, <code>https</code> и <code>file</code>, сохранённую страницу новой вкладки и <code>about:blank</code>. Любой другой сохранённый адрес остаётся в сессии и не открывается. Страницы вроде <code>chrome://</code> запоминаются, но снова не открываются.</p>
+      <p>В URL или заголовке могут быть персональные данные, в том числе страница, на которой вы были подписаны, и токен, который сайт поместил в адрес. Расширение хранит эту строку URL. Оно не извлекает токен из адреса и никуда его не отправляет.</p>
+      <p>Если в сохранённой сессии есть запрещённый адрес, эта вкладка удаляется из записи. Если запрещены все адреса сессии, сессия удаляется. Две сохранённые сессии с одним идентификатором хранятся как одна.</p>
+      <p>Новое сохранение или импорт отклоняется, если в новой сессии больше 2000 вкладок или она не помещается в локальное хранилище. Фиксированного лимита числа именованных сессий нет. Уже сохранённая сессия с более чем 2000 вкладками остаётся как есть. Расширение не удаляет сохранённые сессии, чтобы освободить место.</p>
+      <p>Можно выгрузить JSON-резервную копию сессий и снимков и импортировать этот файл обратно. Можно также импортировать список OneTab или JSON-резервную копию Session Buddy. Импорт читает только выбранный вами файл. Новые сессии добавляются, дубликаты и некорректные записи пропускаются. Ничего не загружается на сервер.</p>
+
+      <h2>Где хранятся данные</h2>
+      <p>Сессии, снимки и перечисленные настройки хранятся в <code>chrome.storage.local</code> в профиле Chrome. Расширение не использует <code>chrome.storage.sync</code>. Эти данные не отправляются разработчику и ни на какой другой сервер. В расширении нет аналитики, рекламы и отправки отчётов о сбоях, и его собственный код сетевых запросов не делает.</p>
+      <p>Восстановление сессии просит Chrome открыть сохранённые адреса как обычные вкладки. Дальше страницы загружает сам браузер. Это не загрузка сессии расширением на сервер.</p>
+      <p>Экспорт записывает JSON-файл на компьютер только по нажатию «Экспорт». Импорт читает файл только когда вы его выбираете. Ни то ни другое файл не отправляет. Если вы потом сами перешлёте этот файл, это происходит вне расширения.</p>
+
+      <h2>Инкогнито</h2>
+      <p>В режиме инкогнито расширение не работает, пока вы не разрешите его на <code>chrome://extensions</code>. После разрешения инкогнито использует отдельное хранилище (<code>incognito: "split"</code>). Сессия или снимок, сохранённые в окне инкогнито, остаются в этой сессии инкогнито и не копируются в обычный профиль. Chrome удаляет это хранилище, когда сессия инкогнито заканчивается.</p>
+
+      <h2>Разрешения</h2>
+      <ul>
+        <li><strong>tabs</strong> — читать URL, pending URL, заголовок, признак закрепления, позицию и принадлежность к группе вкладок в окне, которое вы сохраняете или которое автоматически снимается, и снова открывать эти вкладки при восстановлении. Расширение читает вкладки текущего окна при сохранении, при автоматическом снимке и при восстановлении сессии. Скрипты в страницы не внедряются, API истории, cookie и scripting не используются.</li>
+        <li><strong>storage</strong> — хранить сессии, снимки и настройки в <code>chrome.storage.local</code> на устройстве. Синхронизируемое хранилище не используется.</li>
+        <li><strong>unlimitedStorage</strong> — чтобы библиотека на устройстве не обрезалась на 10 МБ.</li>
+        <li><strong>alarms</strong> — снимок окна примерно каждые пять минут.</li>
+        <li><strong>tabGroups</strong> — сохранять и восстанавливать имя, цвет, свёрнутость и состав группы вкладок.</li>
+      </ul>
+      <p>Расширение не запрашивает доступ к сайтам и не запрашивает право выполнять удалённый код. Content script нет. Разрешения <code>sessions</code>, <code>history</code> и <code>downloads</code> не запрашиваются.</p>
+
+      <h2>Срок хранения</h2>
+      <p>Именованные сессии хранятся, пока вы не удалите их в окне расширения или не удалите само расширение. Автоматические снимки хранятся, пока их не вытеснят более новые (хранятся пять последних) или пока вы не удалите расширение. При удалении расширения Chrome стирает его локальное хранилище. Сессии и снимки инкогнито заканчиваются вместе с сессией инкогнито.</p>
+      <p>Если сохранение или импорт не помещается в локальное хранилище, уже записанные сессии не удаляются, расширение показывает ошибку. Собственный предел в 10 МБ расширение не применяет.</p>
+
+      <h2>Передача</h2>
+      <p>Разработчик не продаёт эти данные, не передаёт их третьим лицам и не использует их для рекламы, оценки кредитоспособности, кредитования или чего‑либо, кроме сохранения, переименования, удаления, восстановления, экспорта и импорта ваших сессий вкладок и хранения автоматических снимков текущего окна. Сервера, которому их можно передать, нет. Разработчик сохранённые сессии не читает.</p>
+
+      <h2>Ограниченное использование</h2>
+      <p>The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+      <p>Использование данных, полученных через API Google, соответствует правилам пользовательских данных Chrome Web Store, включая требования Limited Use.</p>
+
+      <h2>Контакт</h2>
+      <p>Напишите в Legion Labs на <a href="mailto:ppo.viktorov.aa@gmail.com">ppo.viktorov.aa@gmail.com</a> или через <a href="https://legion-factory.github.io/">https://legion-factory.github.io/</a>.</p>
+    </article>
+  </main>
+  <footer>
+    <p>Version 1.0.0. This page does not load scripts, fonts, or other remote resources.</p>
+  </footer>
+</body>
+</html>
