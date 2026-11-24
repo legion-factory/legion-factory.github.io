@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy policy — Save Tabs - Session Saver</title>
-  <meta name="description" content="Privacy policy for the Save Tabs - Session Saver Chrome extension, version 1.0.0. Sessions and snapshots stay on the device.">
+  <meta name="description" content="Privacy policy for the Save Tabs - Session Saver Chrome extension, version 1.0.1. Sessions and snapshots stay on the device.">
   <style>
     :root {
       color-scheme: light;
@@ -67,9 +67,9 @@
 </head>
 <body>
   <header>
-    <p class="kicker">Privacy policy · version 1.0.0</p>
+    <p class="kicker">Privacy policy · version 1.0.1</p>
     <h1>Save Tabs - Session Saver</h1>
-    <p class="updated">Last updated 21 November 2026</p>
+    <p class="updated">Last updated 24 November 2026</p>
     <nav aria-label="Languages">
       <a href="#english">English</a>
       <a href="#russian" lang="ru">Русский</a>
@@ -78,7 +78,7 @@
   <main>
     <article id="english" lang="en">
       <h2>English</h2>
-      <p>Save Tabs - Session Saver is a Chrome extension by Legion Labs that saves and restores the tabs in the current window on your device. This policy describes exactly what version 1.0.0 of the extension does with data. Earlier development builds used the name Named Window Tabs; this policy applies to the same extension.</p>
+      <p>Save Tabs - Session Saver is a Chrome extension by Legion Labs that saves and restores the tabs in the current window on your device. This policy describes exactly what version 1.0.1 of the extension does with data. Earlier development builds used the name Named Window Tabs; this policy applies to the same extension.</p>
       <p>The extension has no account system. A short public page for this policy is published at <a href="https://legion-factory.github.io/save-tabs/privacy.html">https://legion-factory.github.io/save-tabs/privacy.html</a>.</p>
 
       <h2>Data the extension handles</h2>
@@ -94,8 +94,8 @@
         <li>optionally the window’s position and size, so a restore can reopen a window</li>
         <li>the time the session or snapshot was saved</li>
       </ul>
-      <p>Automatic snapshots are taken when a window closes and about every five minutes. The extension keeps the latest five automatic snapshots. Keeping a snapshot copies it into a named session; the snapshot itself stays in the automatic list until it is replaced. Named sessions are not part of that five.</p>
-      <p>A short local recovery flag may be stored if Chrome did not close cleanly, so the popup can offer to restore the latest snapshot. Theme, language, and whether the Chrome Web Store rating prompt is postponed or dismissed are also stored on the device.</p>
+      <p>Automatic snapshots are taken when a window closes and about every five minutes, unless you turn them off in settings. The extension keeps the latest five automatic snapshots. You can delete a single automatic snapshot. Keeping a snapshot copies it into a named session; the snapshot itself stays in the automatic list until it is replaced or deleted. Named sessions are not part of that five.</p>
+      <p>A short local recovery flag may be stored if Chrome did not close cleanly, so the popup or the side panel can offer to restore the latest snapshot. Theme, language, whether automatic snapshots are on, whether the toolbar icon opens the popup or the side panel, and whether the Chrome Web Store rating prompt is postponed or dismissed are also stored on the device.</p>
       <p>The extension does not read Chrome’s browsing history and does not store a separate visit time for each page. It does not read page text, cookies, passwords, form fields, or site icons.</p>
       <p>Addresses that use the schemes <code>javascript:</code>, <code>data:</code>, <code>vbscript:</code>, and <code>blob:</code> are discarded and are not stored. That includes an address that becomes one of those schemes only after tab, carriage-return, and line-feed characters are removed. An address longer than 32,768 characters is not stored. A tab with no address is stored with an empty address and is not reopened. Other addresses in the window, including browser-internal pages, are stored. When you restore a session, the extension reopens <code>http</code>, <code>https</code>, and <code>file</code> addresses, a saved New Tab page, and <code>about:blank</code>. Any other stored address stays in the session and is not opened. Pages such as <code>chrome://</code> are remembered but cannot be reopened.</p>
       <p>A URL or title can still contain personal information, including a page you were signed into and a token a site put in the address. The extension keeps that URL string. It does not take the token out of the URL, and it does not send the URL anywhere.</p>
@@ -104,7 +104,8 @@
       <p>You can export a JSON backup of sessions and snapshots and import that file back. You can also import a OneTab list or a Session Buddy JSON backup. Import reads only the file you choose. It merges new sessions and skips duplicates and invalid entries. Nothing is uploaded.</p>
 
       <h2>Where data lives</h2>
-      <p>Sessions, snapshots, and the settings above are stored in <code>chrome.storage.local</code> in your Chrome profile. The extension does not use <code>chrome.storage.sync</code>. This data is not sent to the developer or to any other server. The extension does not include analytics, ads, or crash reporting, and its own code does not make network requests.</p>
+      <p>Sessions, snapshots, and the settings above are stored in <code>chrome.storage.local</code> in your Chrome profile. The extension does not use <code>chrome.storage.sync</code>. A short-lived copy of the tabs in each open window may also be kept in <code>chrome.storage.session</code> so an automatic snapshot can be taken when that window closes; Chrome clears session storage when the browser session ends. This data is not sent to the developer or to any other server. The extension does not include analytics, ads, or crash reporting, and its own code does not make network requests.</p>
+      <p>Version 1.0.1 can show the same on-device library in Chrome&#39;s side panel as in the popup. A setting stored on the device chooses whether the toolbar icon opens the popup or the side panel. The side panel does not send data anywhere.</p>
       <p>Restoring a session asks Chrome to open the saved addresses as ordinary tabs. Chrome then loads those pages in the usual way. That is the browser opening a page you asked to reopen, not the extension uploading the session.</p>
       <p>Export writes a JSON file on your computer only when you click Export. Import reads a JSON file only when you choose one. Neither action uploads the file. If you later send that file yourself, that happens outside the extension.</p>
 
@@ -118,11 +119,12 @@
         <li><strong>unlimitedStorage</strong> — so the on-device library is not cut at 10 MB.</li>
         <li><strong>alarms</strong> — the five-minute window snapshot.</li>
         <li><strong>tabGroups</strong> — save and restore a tab group’s name, color, collapsed state, and membership.</li>
+        <li><strong>sidePanel</strong> — show the same on-device library in Chrome&#39;s side panel. A local setting chooses whether the toolbar icon opens the popup or the side panel.</li>
       </ul>
       <p>The extension does not request host permissions or permission to run remote code. There is no content script. It does not request <code>sessions</code>, <code>history</code>, or <code>downloads</code>.</p>
 
       <h2>How long data is kept</h2>
-      <p>Named sessions stay until you delete them in the popup, or until you remove the extension. Automatic snapshots stay until they are replaced by newer snapshots (the latest five are kept) or until you remove the extension. Chrome deletes the extension’s local storage on uninstall. Incognito sessions and snapshots end with the incognito session.</p>
+      <p>Named sessions stay until you delete them in the popup or the side panel, or until you remove the extension. Automatic snapshots stay until they are replaced by newer snapshots (the latest five are kept), until you delete one, or until you remove the extension. Chrome deletes the extension’s local storage on uninstall. Incognito sessions and snapshots end with the incognito session.</p>
       <p>If a save or import does not fit in local storage, the extension leaves the sessions already stored in place and shows an error. It does not apply a 10 MB cap of its own.</p>
 
       <h2>Sharing</h2>
@@ -137,7 +139,7 @@
 
     <article id="russian" lang="ru">
       <h2>Русский</h2>
-      <p>Save Tabs - Session Saver (Сохранить вкладки - менеджер сессий) — расширение Chrome от Legion Labs, которое сохраняет и восстанавливает вкладки текущего окна на вашем устройстве. Текст описывает, что версия 1.0.0 делает с данными. В ранних сборках расширение называлось Named Window Tabs; эта политика относится к тому же расширению.</p>
+      <p>Save Tabs - Session Saver (Сохранить вкладки - менеджер сессий) — расширение Chrome от Legion Labs, которое сохраняет и восстанавливает вкладки текущего окна на вашем устройстве. Текст описывает, что версия 1.0.1 делает с данными. В ранних сборках расширение называлось Named Window Tabs; эта политика относится к тому же расширению.</p>
       <p>Системы аккаунтов нет. Публичная страница этой политики: <a href="https://legion-factory.github.io/save-tabs/privacy.html">https://legion-factory.github.io/save-tabs/privacy.html</a>.</p>
 
       <h2>Какие данные обрабатываются</h2>
@@ -153,8 +155,8 @@
         <li>при наличии — положение и размер окна, чтобы восстановление могло открыть окно</li>
         <li>время сохранения сессии или снимка</li>
       </ul>
-      <p>Автоматические снимки делаются при закрытии окна и примерно каждые пять минут. Хранятся пять последних автоматических снимков. «Оставить» копирует снимок в именованную сессию; сам снимок остаётся в автоматическом списке, пока его не вытеснит более новый. Именованные сессии в эти пять не входят.</p>
-      <p>Может храниться короткий локальный флаг восстановления, если Chrome закрылся некорректно, чтобы окно расширения предложило восстановить последний снимок. Тема, язык и решение отложить или скрыть предложение оценить расширение в магазине тоже хранятся на устройстве.</p>
+      <p>Автоматические снимки делаются при закрытии окна и примерно каждые пять минут, если вы не отключили их в настройках. Хранятся пять последних автоматических снимков. Отдельный автоматический снимок можно удалить. «Оставить» копирует снимок в именованную сессию; сам снимок остаётся в автоматическом списке, пока его не вытеснит более новый или пока вы его не удалите. Именованные сессии в эти пять не входят.</p>
+      <p>Может храниться короткий локальный флаг восстановления, если Chrome закрылся некорректно, чтобы окно расширения или боковая панель предложили восстановить последний снимок. Тема, язык, включены ли автоматические снимки, открывает ли значок на панели инструментов всплывающее окно или боковую панель, и решение отложить или скрыть предложение оценить расширение в магазине тоже хранятся на устройстве.</p>
       <p>Историю прежних посещений Chrome расширение не читает и отдельное время визита для каждой страницы не хранит. Текст страницы, cookie, пароли, поля форм и значки сайтов оно не читает.</p>
       <p>Адреса со схемами <code>javascript:</code>, <code>data:</code>, <code>vbscript:</code> и <code>blob:</code> отбрасываются и не сохраняются. Это касается и адреса, который становится одной из этих схем только после удаления символов табуляции и перевода строки. Адрес длиннее 32&nbsp;768 символов не сохраняется. Вкладка без адреса записывается с пустым адресом и не открывается снова. Остальные адреса в окне, включая служебные страницы браузера, сохраняются. При восстановлении расширение открывает адреса <code>http</code>, <code>https</code> и <code>file</code>, сохранённую страницу новой вкладки и <code>about:blank</code>. Любой другой сохранённый адрес остаётся в сессии и не открывается. Страницы вроде <code>chrome://</code> запоминаются, но снова не открываются.</p>
       <p>В URL или заголовке могут быть персональные данные, в том числе страница, на которой вы были подписаны, и токен, который сайт поместил в адрес. Расширение хранит эту строку URL. Оно не извлекает токен из адреса и никуда его не отправляет.</p>
@@ -163,7 +165,8 @@
       <p>Можно выгрузить JSON-резервную копию сессий и снимков и импортировать этот файл обратно. Можно также импортировать список OneTab или JSON-резервную копию Session Buddy. Импорт читает только выбранный вами файл. Новые сессии добавляются, дубликаты и некорректные записи пропускаются. Ничего не загружается на сервер.</p>
 
       <h2>Где хранятся данные</h2>
-      <p>Сессии, снимки и перечисленные настройки хранятся в <code>chrome.storage.local</code> в профиле Chrome. Расширение не использует <code>chrome.storage.sync</code>. Эти данные не отправляются разработчику и ни на какой другой сервер. В расширении нет аналитики, рекламы и отправки отчётов о сбоях, и его собственный код сетевых запросов не делает.</p>
+      <p>Сессии, снимки и перечисленные настройки хранятся в <code>chrome.storage.local</code> в профиле Chrome. Расширение не использует <code>chrome.storage.sync</code>. Кратковременная копия вкладок каждого открытого окна может также храниться в <code>chrome.storage.session</code>, чтобы при закрытии окна можно было сделать автоматический снимок; Chrome очищает это хранилище в конце сессии браузера. Эти данные не отправляются разработчику и ни на какой другой сервер. В расширении нет аналитики, рекламы и отправки отчётов о сбоях, и его собственный код сетевых запросов не делает.</p>
+      <p>В версии 1.0.1 ту же библиотеку на устройстве можно открыть в боковой панели Chrome, как во всплывающем окне. Настройка на устройстве выбирает, открывает ли значок на панели инструментов всплывающее окно или боковую панель. Боковая панель ничего никуда не отправляет.</p>
       <p>Восстановление сессии просит Chrome открыть сохранённые адреса как обычные вкладки. Дальше страницы загружает сам браузер. Это не загрузка сессии расширением на сервер.</p>
       <p>Экспорт записывает JSON-файл на компьютер только по нажатию «Экспорт». Импорт читает файл только когда вы его выбираете. Ни то ни другое файл не отправляет. Если вы потом сами перешлёте этот файл, это происходит вне расширения.</p>
 
@@ -177,11 +180,12 @@
         <li><strong>unlimitedStorage</strong> — чтобы библиотека на устройстве не обрезалась на 10 МБ.</li>
         <li><strong>alarms</strong> — снимок окна примерно каждые пять минут.</li>
         <li><strong>tabGroups</strong> — сохранять и восстанавливать имя, цвет, свёрнутость и состав группы вкладок.</li>
+        <li><strong>sidePanel</strong> — показывать ту же библиотеку на устройстве в боковой панели Chrome. Локальная настройка выбирает, открывает ли значок на панели инструментов всплывающее окно или боковую панель.</li>
       </ul>
       <p>Расширение не запрашивает доступ к сайтам и не запрашивает право выполнять удалённый код. Content script нет. Разрешения <code>sessions</code>, <code>history</code> и <code>downloads</code> не запрашиваются.</p>
 
       <h2>Срок хранения</h2>
-      <p>Именованные сессии хранятся, пока вы не удалите их в окне расширения или не удалите само расширение. Автоматические снимки хранятся, пока их не вытеснят более новые (хранятся пять последних) или пока вы не удалите расширение. При удалении расширения Chrome стирает его локальное хранилище. Сессии и снимки инкогнито заканчиваются вместе с сессией инкогнито.</p>
+      <p>Именованные сессии хранятся, пока вы не удалите их в окне расширения или в боковой панели, или не удалите само расширение. Автоматические снимки хранятся, пока их не вытеснят более новые (хранятся пять последних), пока вы не удалите один из них, или пока вы не удалите расширение. При удалении расширения Chrome стирает его локальное хранилище. Сессии и снимки инкогнито заканчиваются вместе с сессией инкогнито.</p>
       <p>Если сохранение или импорт не помещается в локальное хранилище, уже записанные сессии не удаляются, расширение показывает ошибку. Собственный предел в 10 МБ расширение не применяет.</p>
 
       <h2>Передача</h2>
@@ -196,7 +200,7 @@
     </article>
   </main>
   <footer>
-    <p>Version 1.0.0. This page does not load scripts, fonts, or other remote resources.</p>
+    <p>Version 1.0.1. This page does not load scripts, fonts, or other remote resources.</p>
   </footer>
 </body>
 </html>
